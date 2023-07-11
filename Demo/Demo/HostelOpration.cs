@@ -1,7 +1,7 @@
 ﻿using System.Xml.Linq;
 
-namespace Demo
-{
+namespace Demo;
+
     internal class HostelOpration : IhostelOpration
     {
         static List<Student> list;  
@@ -45,5 +45,6 @@ namespace Demo
             Console.WriteLine(student); 
 
         }
+
     }
-}
+

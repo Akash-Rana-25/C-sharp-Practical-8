@@ -1,7 +1,7 @@
 ﻿using System.Net;
 
-namespace Demo
-{
+namespace Demo;
+
     internal class Program
     {
 
@@ -18,9 +18,11 @@ namespace Demo
                 Console.WriteLine($"3 - Remove Student");
                 Console.WriteLine($"4 - Add Room");
                 Console.WriteLine($"5 - Display Student by ID");
-                Console.WriteLine($"6 - Display Student\n");
+                Console.WriteLine($"6 - Display Student");
+                Console.WriteLine($"7 - Default implementation using Interface\n");
 
-                string Choice = Console.ReadLine();
+
+            string Choice = Console.ReadLine();
 
                 switch (Choice)
                 {
@@ -36,6 +38,8 @@ namespace Demo
                             int id = Convert.ToInt32(Console.ReadLine());
                             Console.WriteLine("Enter Student name: ");
                             string name = Console.ReadLine().ToString();
+
+                            
 
                             hostelOpration.AddStudent(name, id);
 
@@ -105,8 +109,14 @@ namespace Demo
                         HostelOpration hostelOpration1 = new HostelOpration();
                         hostelOpration1.Display();
                         break;
-
-                    default:
+                case "7":
+                    HostelOpration hostelOpration3 = new HostelOpration();
+                    // Creating an object
+                    IhostelOpration obj = hostelOpration3;
+                    // Calling default method
+                    obj.Print();
+                    break;
+                default:
                         Console.WriteLine("Wrong Input");
                         break;
                 }
@@ -119,4 +129,3 @@ namespace Demo
         }
     }
 
-}
